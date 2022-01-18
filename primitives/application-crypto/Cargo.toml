@@ -6,7 +6,7 @@ edition = "2018"
 description = "Provides facilities for generating application specific crypto wrapper types."
 license = "Apache-2.0"
 homepage = ""
-repository = "https://github.com/axia-tech/substrate/"
+repository = "https://github.com/axia-tech/axia-core/"
 documentation = "https://docs.rs/sp-application-crypto"
 readme = "README.md"
 

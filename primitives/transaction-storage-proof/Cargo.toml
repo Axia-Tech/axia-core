@@ -6,7 +6,7 @@ description = "Transaction storage proof primitives"
 edition = "2018"
 license = "Apache-2.0"
 homepage = ""
-repository = "https://github.com/axia-tech/substrate/"
+repository = "https://github.com/axia-tech/axia-core/"
 readme = "README.md"
 
 [package.metadata.docs.rs]

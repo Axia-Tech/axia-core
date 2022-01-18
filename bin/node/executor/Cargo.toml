@@ -6,7 +6,7 @@ description = "Substrate node implementation in Rust."
 edition = "2018"
 license = "Apache-2.0"
 homepage = ""
-repository = "https://github.com/axia-tech/substrate/"
+repository = "https://github.com/axia-tech/axia-core/"
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]

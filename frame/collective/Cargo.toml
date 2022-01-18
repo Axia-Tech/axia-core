@@ -5,7 +5,7 @@ authors = ["AXIA Technologies <admin@axiacoin.network>"]
 edition = "2018"
 license = "Apache-2.0"
 homepage = ""
-repository = "https://github.com/axia-tech/substrate/"
+repository = "https://github.com/axia-tech/axia-core/"
 description = "Collective system: Members of a set of account IDs can make their collective feelings known through dispatched calls from one of two specialized origins."
 readme = "README.md"
 

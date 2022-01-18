@@ -6,7 +6,7 @@ description = "BABE consensus algorithm for substrate"
 edition = "2018"
 license = "GPL-3.0-or-later WITH Classpath-exception-2.0"
 homepage = ""
-repository = "https://github.com/axia-tech/substrate/"
+repository = "https://github.com/axia-tech/axia-core/"
 documentation = "https://docs.rs/sc-consensus-babe"
 readme = "README.md"
 

@@ -5,7 +5,7 @@ authors = ["AXIA Technologies <admin@axiacoin.network>"]
 edition = "2018"
 license = "Apache-2.0"
 homepage = ""
-repository = "https://github.com/axia-tech/substrate/"
+repository = "https://github.com/axia-tech/axia-core/"
 description = "FRAME NFT asset management pallet"
 readme = "README.md"
 

@@ -5,7 +5,7 @@ authors = ["AXIA Technologies <admin@axiacoin.network>"]
 edition = "2018"
 license = "Apache-2.0"
 homepage = ""
-repository = "https://github.com/axia-tech/substrate/"
+repository = "https://github.com/axia-tech/axia-core/"
 description = "A crate which contains primitives that are useful for implementation that uses staking approaches in general. Definitions related to sessions, slashing, etc go here."
 readme = "README.md"
 

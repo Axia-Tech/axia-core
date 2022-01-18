@@ -6,7 +6,7 @@ edition = "2018"
 description = "Storage related primitives"
 license = "Apache-2.0"
 homepage = ""
-repository = "https://github.com/axia-tech/substrate/"
+repository = "https://github.com/axia-tech/axia-core/"
 documentation = "https://docs.rs/sp-storage/"
 readme = "README.md"
 

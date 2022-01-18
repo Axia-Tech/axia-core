@@ -8,7 +8,7 @@ authors = [
 edition = "2018"
 license = "Apache-2.0"
 homepage = ""
-repository = "https://github.com/axia-tech/substrate/"
+repository = "https://github.com/axia-tech/axia-core/"
 description = "Substrate RPC for FRAME's support"
 
 [package.metadata.docs.rs]

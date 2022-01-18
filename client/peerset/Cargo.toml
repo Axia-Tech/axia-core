@@ -6,7 +6,7 @@ name = "sc-peerset"
 version = "4.0.0-dev"
 authors = ["AXIA Technologies <admin@axiacoin.network>"]
 edition = "2018"
-repository = "https://github.com/axia-tech/substrate/"
+repository = "https://github.com/axia-tech/axia-core/"
 documentation = "https://docs.rs/sc-peerset"
 readme = "README.md"
 

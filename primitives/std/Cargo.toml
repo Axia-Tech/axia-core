@@ -5,7 +5,7 @@ authors = ["AXIA Technologies <admin@axiacoin.network>"]
 edition = "2018"
 license = "Apache-2.0"
 homepage = ""
-repository = "https://github.com/axia-tech/substrate/"
+repository = "https://github.com/axia-tech/axia-core/"
 
 description = "Lowest-abstraction level for the Substrate runtime: just exports useful primitives from std or client/alloc to be used with any code that depends on the runtime."
 documentation = "https://docs.rs/sp-std"

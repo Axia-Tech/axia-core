@@ -6,7 +6,7 @@ license = "Apache-2.0"
 authors = ["AXIA Technologies <admin@axiacoin.network>"]
 edition = "2018"
 homepage = ""
-repository = "https://github.com/axia-tech/substrate/"
+repository = "https://github.com/axia-tech/axia-core/"
 readme = "README.md"
 
 [package.metadata.docs.rs]
