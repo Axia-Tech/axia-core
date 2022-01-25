@@ -26,7 +26,7 @@ pallet-session = { version = "4.0.0-dev", default-features = false, path = "../.
 pallet-staking = { version = "4.0.0-dev", default-features = false, features = ["runtime-benchmarks"], path = "../../staking" }
 
 [dev-dependencies]
-codec = { package = "parity-scale-codec", version = "2.0.0", features = ["derive"] }
+codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.0.0", features = ["derive"] }
 scale-info = "1.0"
 sp-core = { version = "4.0.0-dev", path = "../../../primitives/core" }
 sp-io = { version = "4.0.0-dev", path = "../../../primitives/io" }

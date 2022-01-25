@@ -13,7 +13,7 @@ readme = "README.md"
 targets = ["x86_64-unknown-linux-gnu"]
 
 [dependencies]
-codec = { package = "parity-scale-codec", version = "2.0.0" }
+codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.0.0" }
 thiserror = "1.0.21"
 futures = "0.3.16"
 intervalier = "0.4.0"
@@ -41,7 +41,7 @@ sp-consensus = { version = "0.10.0-dev", path = "../../primitives/consensus/comm
 substrate-test-runtime-transaction-pool = { version = "2.0.0", path = "../../test-utils/runtime/transaction-pool" }
 substrate-test-runtime-client = { version = "2.0.0", path = "../../test-utils/runtime/client" }
 sc-block-builder = { version = "0.10.0-dev", path = "../block-builder" }
-codec = { package = "parity-scale-codec", version = "2.0.0" }
+codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.0.0" }
 substrate-test-runtime = { version = "2.0.0", path = "../../test-utils/runtime" }
 criterion = "0.3"
 
