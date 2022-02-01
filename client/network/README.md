@@ -140,7 +140,7 @@ substream is closed, the entire connection is closed as well. This is a bug that
 resolved by deprecating the protocol entirely.
 
 Within the unique Substrate substream, messages encoded using
-[*parity-scale-codec*](https://github.com/axiatech/parity-scale-codec) are exchanged.
+[*axia-scale-codec*](https://github.com/axiatech/axia-scale-codec) are exchanged.
 The detail of theses messages is not totally in place, but they can be found in the
 `message.rs` file.
 

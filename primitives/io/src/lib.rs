@@ -1045,7 +1045,7 @@ pub trait Offchain {
 
 	/// Initiates a http request given HTTP verb and the URL.
 	///
-	/// Meta is a future-reserved field containing additional, parity-scale-codec encoded
+	/// Meta is a future-reserved field containing additional, axia-scale-codec encoded
 	/// parameters. Returns the id of newly started request.
 	fn http_request_start(
 		&mut self,

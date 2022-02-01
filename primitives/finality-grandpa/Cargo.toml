@@ -15,9 +15,9 @@ targets = ["x86_64-unknown-linux-gnu"]
 
 
 [dependencies]
-codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.0.0", default-features = false, features = ["derive"] }
-scale-info = { version = "1.0", default-features = false, features = ["derive"] }
-grandpa = { package = "finality-grandpa", version = "0.14.1", default-features = false, features = ["derive-codec"] }
+codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.3.1", default-features = false, features = ["derive"] }
+scale-info = { git = "https://github.com/axia-tech/scale-info", branch = "v1.0.0", default-features = false, features = ["derive"] }
+grandpa = { git = "https://github.com/axia-tech/finality-grandpa", package = "finality-grandpa", branch = "v0.14.1", default-features = false, features = ["derive-codec"] }
 log = { version = "0.4.8", optional = true }
 serde = { version = "1.0.126", optional = true, features = ["derive"] }
 sp-api = { version = "4.0.0-dev", default-features = false, path = "../api" }

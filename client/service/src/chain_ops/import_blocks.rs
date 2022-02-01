@@ -58,7 +58,7 @@ pub fn build_spec(spec: &dyn ChainSpec, raw: bool) -> error::Result<String> {
 	spec.as_json(raw).map_err(Into::into)
 }
 
-/// Helper enum that wraps either a binary decoder (from parity-scale-codec), or a JSON decoder
+/// Helper enum that wraps either a binary decoder (from axia-scale-codec), or a JSON decoder
 /// (from serde_json). Implements the Iterator Trait, calling `next()` will decode the next
 /// SignedBlock and return it.
 enum BlockIter<R, B>

@@ -19,7 +19,7 @@
 //! into a WASM file.
 
 use codec::Encode;
-use parity_wasm::elements::{deserialize_buffer, serialize, Module};
+use axia_wasm::elements::{deserialize_buffer, serialize, Module};
 
 #[derive(Clone, Copy, Eq, PartialEq, Debug, thiserror::Error)]
 pub enum Error {

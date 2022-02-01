@@ -82,7 +82,7 @@ impl<Block: BlockT> fmt::Display for BlockId<Block> {
 
 /// Abstraction over a substrate block.
 #[derive(PartialEq, Eq, Clone, Encode, Decode, RuntimeDebug)]
-#[cfg_attr(feature = "std", derive(Serialize, Deserialize, parity_util_mem::MallocSizeOf))]
+#[cfg_attr(feature = "std", derive(Serialize, Deserialize, axia_util_mem::MallocSizeOf))]
 #[cfg_attr(feature = "std", serde(rename_all = "camelCase"))]
 #[cfg_attr(feature = "std", serde(deny_unknown_fields))]
 pub struct Block<Header, Extrinsic: MaybeSerialize> {

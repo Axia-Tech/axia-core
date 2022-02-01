@@ -28,7 +28,7 @@ use std::time::Instant;
 
 use super::base_pool::Transaction;
 
-#[derive(parity_util_mem::MallocSizeOf)]
+#[derive(axia_util_mem::MallocSizeOf)]
 /// Transaction with partially satisfied dependencies.
 pub struct WaitingTransaction<Hash, Ex> {
 	/// Transaction details.
@@ -108,7 +108,7 @@ impl<Hash, Ex> WaitingTransaction<Hash, Ex> {
 ///
 /// Contains transactions that are still awaiting for some other transactions that
 /// could provide a tag that they require.
-#[derive(Debug, parity_util_mem::MallocSizeOf)]
+#[derive(Debug, axia_util_mem::MallocSizeOf)]
 pub struct FutureTransactions<Hash: hash::Hash + Eq, Ex> {
 	/// tags that are not yet provided by any transaction and we await for them
 	wanted_tags: HashMap<Tag, HashSet<Hash>>,
@@ -278,6 +278,6 @@ mod tests {
 		});
 
 		// data is at least 1024!
-		assert!(parity_util_mem::malloc_size(&future) > 1024);
+		assert!(axia_util_mem::malloc_size(&future) > 1024);
 	}
 }

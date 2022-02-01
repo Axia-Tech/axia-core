@@ -18,7 +18,7 @@
 
 use futures::executor::block_on;
 use hex_literal::hex;
-use parity_scale_codec::{Decode, Encode, Joiner};
+use axia_scale_codec::{Decode, Encode, Joiner};
 use sc_block_builder::BlockBuilderProvider;
 use sc_client_api::{in_mem, BlockBackend, BlockchainEvents, StorageProvider};
 use sc_client_db::{

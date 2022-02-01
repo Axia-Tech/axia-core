@@ -33,7 +33,7 @@ pub trait Size {
 /// Map with size tracking.
 ///
 /// Size reported might be slightly off and only approximately true.
-#[derive(Debug, parity_util_mem::MallocSizeOf)]
+#[derive(Debug, axia_util_mem::MallocSizeOf)]
 pub struct TrackedMap<K, V> {
 	index: Arc<RwLock<HashMap<K, V>>>,
 	bytes: AtomicIsize,

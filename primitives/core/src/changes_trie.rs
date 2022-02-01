@@ -25,7 +25,7 @@ use serde::{Deserialize, Serialize};
 /// Substrate changes trie configuration.
 #[cfg_attr(
 	any(feature = "std", test),
-	derive(Serialize, Deserialize, parity_util_mem::MallocSizeOf)
+	derive(Serialize, Deserialize, axia_util_mem::MallocSizeOf)
 )]
 #[derive(Debug, Clone, PartialEq, Eq, Default, Encode, Decode, scale_info::TypeInfo)]
 pub struct ChangesTrieConfiguration {

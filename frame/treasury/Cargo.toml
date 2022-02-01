@@ -17,7 +17,7 @@ codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia
 	"derive",
 	"max-encoded-len",
 ] }
-scale-info = { version = "1.0", default-features = false, features = ["derive"] }
+scale-info = { git = "https://github.com/axia-tech/scale-info", branch = "v1.0.0", default-features = false, features = ["derive"] }
 serde = { version = "1.0.126", features = ["derive"], optional = true }
 impl-trait-for-tuples = "0.2.1"
 

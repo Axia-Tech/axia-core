@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog].
 
 ## 2.0.1-> 3.0.0 - Apollo 14
 
-Most notably, this is the first release of the new FRAME (2.0) with its new macro-syntax and some changes in types, and pallet versioning. This release also incorporates the faster and improve version 2.0 of the parity-scale-codec and upgraded dependencies all-around. While the `FinalityTracker` pallet has been dropped, this release marks the first public appearance of a few new pallets, too;Bounties, Lottery, Tips (extracted from the `Treasury`-pallet, see #7536) and Merkle-Mountain-Ranges (MMR).
+Most notably, this is the first release of the new FRAME (2.0) with its new macro-syntax and some changes in types, and pallet versioning. This release also incorporates the faster and improve version 2.0 of the axia-scale-codec and upgraded dependencies all-around. While the `FinalityTracker` pallet has been dropped, this release marks the first public appearance of a few new pallets, too;Bounties, Lottery, Tips (extracted from the `Treasury`-pallet, see #7536) and Merkle-Mountain-Ranges (MMR).
 
 On the client side, the most notable changes are around the keystore, making it async and switching to a different signing model allowing for remote-signing to be implemented; and various changes to improve networking and light-client support, like adding the Grandpa warp sync request-response protocol (#7711).
 
@@ -106,7 +106,7 @@ API
 * Migrate assets pallet to new macros (#7984)
 * contracts: Make ChainExtension trait generic over the runtime (#8003)
 * Decouple the session validators from im-online (#7127)
-* Update parity-scale-codec to 2.0 (#7994)
+* Update axia-scale-codec to 2.0 (#7994)
 * Merkle Mountain Range pallet improvements (#7891)
 * Cleaner GRANDPA RPC API for proving finality (#7339)
 * Migrate frame-system to pallet attribute macro (#7898)

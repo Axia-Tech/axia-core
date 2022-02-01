@@ -20,7 +20,7 @@ jsonrpsee-proc-macros = "0.3.1"
 
 env_logger = "0.9"
 log = "0.4.11"
-codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.0.0" }
+codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.3.1" }
 serde_json = "1.0"
 serde = "1.0.126"
 

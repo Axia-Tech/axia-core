@@ -19,12 +19,12 @@ use crate::{
 	columns, light,
 	utils::{DatabaseType, NUM_COLUMNS},
 };
-/// A `Database` adapter for parity-db.
+/// A `Database` adapter for axia-db.
 use sp_database::{error::DatabaseError, Change, ColumnId, Database, Transaction};
 
-struct DbAdapter(parity_db::Db);
+struct DbAdapter(axia_db::Db);
 
-fn handle_err<T>(result: parity_db::Result<T>) -> T {
+fn handle_err<T>(result: axia_db::Result<T>) -> T {
 	match result {
 		Ok(r) => r,
 		Err(e) => {
@@ -33,13 +33,13 @@ fn handle_err<T>(result: parity_db::Result<T>) -> T {
 	}
 }
 
-/// Wrap parity-db database into a trait object that implements `sp_database::Database`
+/// Wrap axia-db database into a trait object that implements `sp_database::Database`
 pub fn open<H: Clone + AsRef<[u8]>>(
 	path: &std::path::Path,
 	db_type: DatabaseType,
 	create: bool,
-) -> parity_db::Result<std::sync::Arc<dyn Database<H>>> {
-	let mut config = parity_db::Options::with_columns(path, NUM_COLUMNS as u8);
+) -> axia_db::Result<std::sync::Arc<dyn Database<H>>> {
+	let mut config = axia_db::Options::with_columns(path, NUM_COLUMNS as u8);
 
 	match db_type {
 		DatabaseType::Full => {
@@ -53,7 +53,7 @@ pub fn open<H: Clone + AsRef<[u8]>>(
 
 			for i in indexes {
 				let mut column = &mut config.columns[i as usize];
-				column.compression = parity_db::CompressionType::Lz4;
+				column.compression = axia_db::CompressionType::Lz4;
 			}
 
 			let mut state_col = &mut config.columns[columns::STATE as usize];
@@ -63,14 +63,14 @@ pub fn open<H: Clone + AsRef<[u8]>>(
 		},
 		DatabaseType::Light => {
 			config.columns[light::columns::HEADER as usize].compression =
-				parity_db::CompressionType::Lz4;
+				axia_db::CompressionType::Lz4;
 		},
 	}
 
 	let db = if create {
-		parity_db::Db::open_or_create(&config)?
+		axia_db::Db::open_or_create(&config)?
 	} else {
-		parity_db::Db::open(&config)?
+		axia_db::Db::open(&config)?
 	};
 
 	Ok(std::sync::Arc::new(DbAdapter(db)))

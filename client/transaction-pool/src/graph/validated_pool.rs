@@ -111,11 +111,11 @@ pub struct ValidatedPool<B: ChainApi> {
 	rotator: PoolRotator<ExtrinsicHash<B>>,
 }
 
-impl<B: ChainApi> parity_util_mem::MallocSizeOf for ValidatedPool<B>
+impl<B: ChainApi> axia_util_mem::MallocSizeOf for ValidatedPool<B>
 where
-	ExtrinsicFor<B>: parity_util_mem::MallocSizeOf,
+	ExtrinsicFor<B>: axia_util_mem::MallocSizeOf,
 {
-	fn size_of(&self, ops: &mut parity_util_mem::MallocSizeOfOps) -> usize {
+	fn size_of(&self, ops: &mut axia_util_mem::MallocSizeOfOps) -> usize {
 		// other entries insignificant or non-primary references
 		self.pool.size_of(ops)
 	}

@@ -195,7 +195,7 @@ impl Into<sc_service::config::RpcMethods> for RpcMethods {
 pub enum Database {
 	/// Facebooks RocksDB
 	RocksDb,
-	/// AXIADb. <https://github.com/axiatech/parity-db/>
+	/// AXIADb. <https://github.com/axiatech/axia-db/>
 	AXIADb,
 	/// Detect whether there is an existing database. Use it, if there is, if not, create new
 	/// instance of axiadb

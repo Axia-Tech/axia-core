@@ -49,7 +49,7 @@ mod test;
 use codec::Codec;
 use log::trace;
 use noncanonical::NonCanonicalOverlay;
-use parity_util_mem::{malloc_size, MallocSizeOf};
+use axia_util_mem::{malloc_size, MallocSizeOf};
 use parking_lot::RwLock;
 use pruning::RefWindow;
 use sc_client_api::{MemorySize, StateDbMemoryInfo};

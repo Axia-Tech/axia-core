@@ -22,7 +22,7 @@ use ansi_term::Colour;
 use futures::prelude::*;
 use futures_timer::Delay;
 use log::{debug, info, trace};
-use parity_util_mem::MallocSizeOf;
+use axia_util_mem::MallocSizeOf;
 use sc_client_api::{BlockchainEvents, UsageProvider};
 use sc_network::NetworkService;
 use sc_transaction_pool_api::TransactionPool;
@@ -85,7 +85,7 @@ pub async fn build<B: BlockT, C, P>(
 			trace!(
 				target: "usage",
 				"Subsystems memory [txpool: {} kB]",
-				parity_util_mem::malloc_size(&*pool) / 1024,
+				axia_util_mem::malloc_size(&*pool) / 1024,
 			);
 			display.display(&info, net_status);
 			future::ready(())

@@ -20,7 +20,7 @@ We'll be taking the diff from 2.0.1 to 3.0.0 on `bin/node` as the baseline of wh
 
 ### Versions upgrade
 
-First and foremost you have to upgrade the version pf the dependencies of course, that's `0.8.x -> 0.9.0` and `2.0.x -> 3.0.0` for all `sc-`, `sp-`, `frame-`, and `pallet-` coming from AXIA. Further more this release also upgraded its own dependencies, most notably, we are now using `parity-scale-codec 2.0`, `parking_lot 0.11` and `substrate-wasm-builder 3.0.0` (as build dependency). All other dependency upgrades should resolve automatically or are just internal. However you might see some error that another dependency/type you have as a dependency and one of our upgraded crates don't match up, if so please check the version of said dependency - we've probably upgraded it.
+First and foremost you have to upgrade the version pf the dependencies of course, that's `0.8.x -> 0.9.0` and `2.0.x -> 3.0.0` for all `sc-`, `sp-`, `frame-`, and `pallet-` coming from AXIA. Further more this release also upgraded its own dependencies, most notably, we are now using `axia-scale-codec 2.0`, `parking_lot 0.11` and `substrate-wasm-builder 3.0.0` (as build dependency). All other dependency upgrades should resolve automatically or are just internal. However you might see some error that another dependency/type you have as a dependency and one of our upgraded crates don't match up, if so please check the version of said dependency - we've probably upgraded it.
 
 ### WASM-Builder
 

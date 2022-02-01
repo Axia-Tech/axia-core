@@ -133,11 +133,11 @@ pub struct Pool<B: ChainApi> {
 	validated_pool: Arc<ValidatedPool<B>>,
 }
 
-impl<B: ChainApi> parity_util_mem::MallocSizeOf for Pool<B>
+impl<B: ChainApi> axia_util_mem::MallocSizeOf for Pool<B>
 where
-	ExtrinsicFor<B>: parity_util_mem::MallocSizeOf,
+	ExtrinsicFor<B>: axia_util_mem::MallocSizeOf,
 {
-	fn size_of(&self, ops: &mut parity_util_mem::MallocSizeOfOps) -> usize {
+	fn size_of(&self, ops: &mut axia_util_mem::MallocSizeOfOps) -> usize {
 		self.validated_pool.size_of(ops)
 	}
 }

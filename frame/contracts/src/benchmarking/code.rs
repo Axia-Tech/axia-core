@@ -41,7 +41,7 @@ use sp_std::{borrow::ToOwned, convert::TryFrom, prelude::*};
 /// Pass to `create_code` in order to create a compiled `WasmModule`.
 ///
 /// This exists to have a more declarative way to describe a wasm module than to use
-/// parity-wasm directly. It is tailored to fit the structure of contracts that are
+/// axia-wasm directly. It is tailored to fit the structure of contracts that are
 /// needed for benchmarking.
 #[derive(Default)]
 pub struct ModuleDefinition {

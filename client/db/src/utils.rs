@@ -36,7 +36,7 @@ use sp_trie::DBValue;
 /// Otherwise RocksDb will fail to open database && check its type.
 #[cfg(any(
 	feature = "with-kvdb-rocksdb",
-	feature = "with-parity-db",
+	feature = "with-axia-db",
 	feature = "test-helpers",
 	test
 ))]
@@ -232,7 +232,7 @@ fn open_database_at<Block: BlockT>(
 	db_type: DatabaseType,
 ) -> sp_blockchain::Result<Arc<dyn Database<DbHash>>> {
 	let db: Arc<dyn Database<DbHash>> = match &source {
-		DatabaseSource::AXIADb { path } => open_parity_db::<Block>(&path, db_type, true)?,
+		DatabaseSource::AXIADb { path } => open_axia_db::<Block>(&path, db_type, true)?,
 		DatabaseSource::RocksDb { path, cache_size } =>
 			open_kvdb_rocksdb::<Block>(&path, db_type, true, *cache_size)?,
 		DatabaseSource::Custom(db) => db.clone(),
@@ -241,7 +241,7 @@ fn open_database_at<Block: BlockT>(
 			match open_kvdb_rocksdb::<Block>(&rocksdb_path, db_type, false, *cache_size) {
 				Ok(db) => db,
 				Err(OpenDbError::NotEnabled(_)) | Err(OpenDbError::DoesNotExist) =>
-					open_parity_db::<Block>(&axiadb_path, db_type, true)?,
+					open_axia_db::<Block>(&axiadb_path, db_type, true)?,
 				Err(_) => return Err(backend_err("cannot open rocksdb. corrupted database")),
 			}
 		},
@@ -280,9 +280,9 @@ impl From<OpenDbError> for sp_blockchain::Error {
 	}
 }
 
-#[cfg(feature = "with-parity-db")]
-impl From<parity_db::Error> for OpenDbError {
-	fn from(err: parity_db::Error) -> Self {
+#[cfg(feature = "with-axia-db")]
+impl From<axia_db::Error> for OpenDbError {
+	fn from(err: axia_db::Error) -> Self {
 		if err.to_string().contains("use open_or_create") {
 			OpenDbError::DoesNotExist
 		} else {
@@ -301,19 +301,19 @@ impl From<io::Error> for OpenDbError {
 	}
 }
 
-#[cfg(feature = "with-parity-db")]
-fn open_parity_db<Block: BlockT>(path: &Path, db_type: DatabaseType, create: bool) -> OpenDbResult {
-	let db = crate::parity_db::open(path, db_type, create)?;
+#[cfg(feature = "with-axia-db")]
+fn open_axia_db<Block: BlockT>(path: &Path, db_type: DatabaseType, create: bool) -> OpenDbResult {
+	let db = crate::axia_db::open(path, db_type, create)?;
 	Ok(db)
 }
 
-#[cfg(not(feature = "with-parity-db"))]
-fn open_parity_db<Block: BlockT>(
+#[cfg(not(feature = "with-axia-db"))]
+fn open_axia_db<Block: BlockT>(
 	_path: &Path,
 	_db_type: DatabaseType,
 	_create: bool,
 ) -> OpenDbResult {
-	Err(OpenDbError::NotEnabled("with-parity-db"))
+	Err(OpenDbError::NotEnabled("with-axia-db"))
 }
 
 #[cfg(any(feature = "with-kvdb-rocksdb", test))]
@@ -680,13 +680,13 @@ mod tests {
 			"db_version",
 		);
 
-		#[cfg(feature = "with-parity-db")]
+		#[cfg(feature = "with-axia-db")]
 		check_dir_for_db_type(
 			DatabaseType::Light,
 			DatabaseSource::AXIADb { path: PathBuf::new() },
 			"metadata",
 		);
-		#[cfg(feature = "with-parity-db")]
+		#[cfg(feature = "with-axia-db")]
 		check_dir_for_db_type(
 			DatabaseType::Full,
 			DatabaseSource::AXIADb { path: PathBuf::new() },
@@ -770,7 +770,7 @@ mod tests {
 		}
 	}
 
-	#[cfg(feature = "with-parity-db")]
+	#[cfg(feature = "with-axia-db")]
 	#[cfg(any(feature = "with-kvdb-rocksdb", test))]
 	#[test]
 	fn test_open_database_auto_new() {
@@ -812,7 +812,7 @@ mod tests {
 		}
 	}
 
-	#[cfg(feature = "with-parity-db")]
+	#[cfg(feature = "with-axia-db")]
 	#[cfg(any(feature = "with-kvdb-rocksdb", test))]
 	#[test]
 	fn test_open_database_rocksdb_new() {
@@ -856,7 +856,7 @@ mod tests {
 		}
 	}
 
-	#[cfg(feature = "with-parity-db")]
+	#[cfg(feature = "with-axia-db")]
 	#[cfg(any(feature = "with-kvdb-rocksdb", test))]
 	#[test]
 	fn test_open_database_axiadb_new() {

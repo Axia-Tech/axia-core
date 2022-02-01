@@ -586,7 +586,7 @@ sp_core::impl_maybe_marker!(
 	trait MaybeSerializeDeserialize: DeserializeOwned, Serialize;
 
 	/// A type that implements MallocSizeOf.
-	trait MaybeMallocSizeOf: parity_util_mem::MallocSizeOf;
+	trait MaybeMallocSizeOf: axia_util_mem::MallocSizeOf;
 );
 
 /// A type that can be used in runtime structures.

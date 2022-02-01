@@ -17,7 +17,7 @@ targets = ["x86_64-unknown-linux-gnu"]
 [dependencies]
 serde = { version = "1.0.126", optional = true, features = ["derive"] }
 codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.3.1", default-features = false, features = ["derive", "max-encoded-len"] }
-scale-info = { version = "1.0", default-features = false, features = ["derive"] }
+scale-info = { git = "https://github.com/axia-tech/scale-info", branch = "v1.0.0", default-features = false, features = ["derive"] }
 sp-core = { version = "4.0.0-dev", default-features = false, path = "../core" }
 sp-application-crypto = { version = "4.0.0-dev", default-features = false, path = "../application-crypto" }
 sp-arithmetic = { version = "4.0.0-dev", default-features = false, path = "../arithmetic" }
@@ -27,7 +27,7 @@ log = { version = "0.4.14", default-features = false }
 paste = "1.0"
 rand = { version = "0.7.2", optional = true }
 impl-trait-for-tuples = "0.2.1"
-parity-util-mem = { version = "0.10.0", default-features = false, features = ["primitive-types"] }
+axia-util-mem = { git = "https://github.com/axia-tech/axia-common", branch = "master", version = "0.10.2", default-features = false, features = ["primitive-types"] }
 hash256-std-hasher = { version = "0.15.2", default-features = false }
 either = { version = "1.5", default-features = false }
 
@@ -54,7 +54,7 @@ std = [
 	"sp-std/std",
 	"sp-io/std",
 	"serde",
-	"parity-util-mem/std",
+	"axia-util-mem/std",
 	"hash256-std-hasher/std",
 	"either/use_std",
 ]

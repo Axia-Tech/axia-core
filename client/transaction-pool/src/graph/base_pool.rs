@@ -84,7 +84,7 @@ pub struct PruneStatus<Hash, Ex> {
 
 /// Immutable transaction
 #[cfg_attr(test, derive(Clone))]
-#[derive(PartialEq, Eq, parity_util_mem::MallocSizeOf)]
+#[derive(PartialEq, Eq, axia_util_mem::MallocSizeOf)]
 pub struct Transaction<Hash, Extrinsic> {
 	/// Raw extrinsic representing that transaction.
 	pub data: Extrinsic,
@@ -207,7 +207,7 @@ const RECENTLY_PRUNED_TAGS: usize = 2;
 /// as-is for the second time will fail or produce unwanted results.
 /// Most likely it is required to revalidate them and recompute set of
 /// required tags.
-#[derive(Debug, parity_util_mem::MallocSizeOf)]
+#[derive(Debug, axia_util_mem::MallocSizeOf)]
 pub struct BasePool<Hash: hash::Hash + Eq, Ex> {
 	reject_future_transactions: bool,
 	future: FutureTransactions<Hash, Ex>,
@@ -802,7 +802,7 @@ mod tests {
 		})
 		.expect("import 2 should be ok");
 
-		assert!(parity_util_mem::malloc_size(&pool) > 5000);
+		assert!(axia_util_mem::malloc_size(&pool) > 5000);
 	}
 
 	#[test]

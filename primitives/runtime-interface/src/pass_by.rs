@@ -41,7 +41,7 @@ use sp_std::vec::Vec;
 /// Derive macro for implementing [`PassBy`] with the [`Codec`] strategy.
 ///
 /// This requires that the type implements [`Encode`](codec::Encode) and
-/// [`Decode`](codec::Decode) from `parity-scale-codec`.
+/// [`Decode`](codec::Decode) from `axia-scale-codec`.
 ///
 /// # Example
 ///

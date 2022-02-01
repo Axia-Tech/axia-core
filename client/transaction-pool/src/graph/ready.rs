@@ -37,7 +37,7 @@ use super::{
 /// An in-pool transaction reference.
 ///
 /// Should be cheap to clone.
-#[derive(Debug, parity_util_mem::MallocSizeOf)]
+#[derive(Debug, axia_util_mem::MallocSizeOf)]
 pub struct TransactionRef<Hash, Ex> {
 	/// The actual transaction data.
 	pub transaction: Arc<Transaction<Hash, Ex>>,
@@ -74,7 +74,7 @@ impl<Hash, Ex> PartialEq for TransactionRef<Hash, Ex> {
 }
 impl<Hash, Ex> Eq for TransactionRef<Hash, Ex> {}
 
-#[derive(Debug, parity_util_mem::MallocSizeOf)]
+#[derive(Debug, axia_util_mem::MallocSizeOf)]
 pub struct ReadyTx<Hash, Ex> {
 	/// A reference to a transaction
 	pub transaction: TransactionRef<Hash, Ex>,
@@ -105,7 +105,7 @@ qed
 "#;
 
 /// Validated transactions that are block ready with all their dependencies met.
-#[derive(Debug, parity_util_mem::MallocSizeOf)]
+#[derive(Debug, axia_util_mem::MallocSizeOf)]
 pub struct ReadyTransactions<Hash: hash::Hash + Eq, Ex> {
 	/// Next free insertion id (used to indicate when a transaction was inserted into the pool).
 	insertion_id: u64,
@@ -758,7 +758,7 @@ mod tests {
 		};
 		import(&mut ready, tx).unwrap();
 
-		assert!(parity_util_mem::malloc_size(&ready) > 200);
+		assert!(axia_util_mem::malloc_size(&ready) > 200);
 	}
 
 	#[test]

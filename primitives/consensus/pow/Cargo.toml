@@ -17,7 +17,7 @@ sp-api = { version = "4.0.0-dev", default-features = false, path = "../../api" }
 sp-std = { version = "4.0.0-dev", default-features = false, path = "../../std" }
 sp-runtime = { version = "4.0.0-dev", default-features = false, path = "../../runtime" }
 sp-core = { version = "4.0.0-dev", default-features = false, path = "../../core" }
-codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.0.0", default-features = false, features = ["derive"] }
+codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.3.1", default-features = false, features = ["derive"] }
 
 [features]
 default = ["std"]

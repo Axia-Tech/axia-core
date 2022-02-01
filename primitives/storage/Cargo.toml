@@ -19,7 +19,7 @@ serde = { version = "1.0.126", optional = true, features = ["derive"] }
 impl-serde = { version = "0.3.1", optional = true }
 ref-cast = "1.0.0"
 sp-debug-derive = { version = "3.0.0", default-features = false, path = "../debug-derive" }
-codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.0.0", default-features = false, features = ["derive"] }
+codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.3.1", default-features = false, features = ["derive"] }
 
 [features]
 default = [ "std" ]

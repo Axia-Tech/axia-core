@@ -43,9 +43,9 @@ pub(crate) fn syn_err(message: &'static str) -> syn::Error {
 ///
 /// The following data types can be configured by the macro.
 ///
-/// - The identifier of the voter. This can be any type that supports `parity-scale-codec`'s compact
+/// - The identifier of the voter. This can be any type that supports `axia-scale-codec`'s compact
 ///   encoding.
-/// - The identifier of the target. This can be any type that supports `parity-scale-codec`'s
+/// - The identifier of the target. This can be any type that supports `axia-scale-codec`'s
 ///   compact encoding.
 /// - The accuracy of the ratios. This must be one of the `PerThing` types defined in
 ///   `sp-arithmetic`.
@@ -97,7 +97,7 @@ pub(crate) fn syn_err(message: &'static str) -> syn::Error {
 ///
 /// The generated struct is by default deriving both `Encode` and `Decode`. This is okay but could
 /// lead to many `0`s in the solution. If prefixed with `#[compact]`, then a custom compact encoding
-/// for numbers will be used, similar to how `parity-scale-codec`'s `Compact` works.
+/// for numbers will be used, similar to how `axia-scale-codec`'s `Compact` works.
 ///
 /// ```
 /// # use sp_npos_elections_solution_type::generate_solution_type;

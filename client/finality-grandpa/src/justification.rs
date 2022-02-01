@@ -22,7 +22,7 @@ use std::{
 };
 
 use finality_grandpa::{voter_set::VoterSet, Error as GrandpaError};
-use parity_scale_codec::{Decode, Encode};
+use axia_scale_codec::{Decode, Encode};
 use sp_blockchain::{Error as ClientError, HeaderBackend};
 use sp_finality_grandpa::AuthorityId;
 use sp_runtime::{

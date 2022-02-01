@@ -55,13 +55,13 @@ pub struct Header<Number: Copy + Into<U256> + TryFrom<U256>, Hash: HashT> {
 }
 
 #[cfg(feature = "std")]
-impl<Number, Hash> parity_util_mem::MallocSizeOf for Header<Number, Hash>
+impl<Number, Hash> axia_util_mem::MallocSizeOf for Header<Number, Hash>
 where
-	Number: Copy + Into<U256> + TryFrom<U256> + parity_util_mem::MallocSizeOf,
+	Number: Copy + Into<U256> + TryFrom<U256> + axia_util_mem::MallocSizeOf,
 	Hash: HashT,
-	Hash::Output: parity_util_mem::MallocSizeOf,
+	Hash::Output: axia_util_mem::MallocSizeOf,
 {
-	fn size_of(&self, ops: &mut parity_util_mem::MallocSizeOfOps) -> usize {
+	fn size_of(&self, ops: &mut axia_util_mem::MallocSizeOfOps) -> usize {
 		self.parent_hash.size_of(ops) +
 			self.number.size_of(ops) +
 			self.state_root.size_of(ops) +

@@ -84,7 +84,7 @@
 //!
 //! We only send polite messages to peers,
 
-use parity_scale_codec::{Decode, Encode};
+use axia_scale_codec::{Decode, Encode};
 use sc_network::{ObservedRole, PeerId, ReputationChange};
 use sc_network_gossip::{MessageIntent, ValidatorContext};
 use sp_finality_grandpa::AuthorityId;

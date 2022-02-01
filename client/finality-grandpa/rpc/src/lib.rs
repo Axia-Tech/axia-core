@@ -173,7 +173,7 @@ mod tests {
 	use jsonrpc_core::{types::Params, Notification, Output};
 	use std::{collections::HashSet, convert::TryInto, sync::Arc};
 
-	use parity_scale_codec::{Decode, Encode};
+	use axia_scale_codec::{Decode, Encode};
 	use sc_block_builder::{BlockBuilder, RecordProof};
 	use sc_finality_grandpa::{
 		report, AuthorityId, FinalityProof, GrandpaJustification, GrandpaJustificationSender,

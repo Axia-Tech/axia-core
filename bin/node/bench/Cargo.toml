@@ -35,10 +35,10 @@ fs_extra = "1"
 hex = "0.4.0"
 rand = { version = "0.7.2", features = ["small_rng"] }
 lazy_static = "1.4.0"
-parity-util-mem = { version = "0.10.0", default-features = false, features = [
+axia-util-mem = { git = "https://github.com/axia-tech/axia-common", branch = "master", version = "0.10.2", default-features = false, features = [
     "primitive-types",
 ] }
-parity-db = { version = "0.3" }
+axia-db = { git = "https://github.com/axia-tech/axia-db", version = "0.3.5" }
 sc-transaction-pool = { version = "4.0.0-dev", path = "../../../client/transaction-pool" }
 sc-transaction-pool-api = { version = "4.0.0-dev", path = "../../../client/transaction-pool/api" }
 futures = { version = "0.3.4", features = ["thread-pool"] }

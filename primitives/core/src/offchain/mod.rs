@@ -345,7 +345,7 @@ pub trait Externalities: Send {
 
 	/// Initiates a http request given HTTP verb and the URL.
 	///
-	/// Meta is a future-reserved field containing additional, parity-scale-codec encoded
+	/// Meta is a future-reserved field containing additional, axia-scale-codec encoded
 	/// parameters. Returns the id of newly started request.
 	///
 	/// Returns an error if:

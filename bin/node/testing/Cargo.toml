@@ -19,11 +19,11 @@ sc-service = { version = "0.10.0-dev", features = [
 ], path = "../../../client/service" }
 sc-client-db = { version = "0.10.0-dev", path = "../../../client/db/", features = [
     "kvdb-rocksdb",
-    "parity-db",
+    "axia-db",
 ] }
 sc-client-api = { version = "4.0.0-dev", path = "../../../client/api/" }
 sc-consensus = { version = "0.10.0-dev", path = "../../../client/consensus/common" }
-codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.0.0" }
+codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.3.1" }
 sp-keyring = { version = "4.0.0-dev", path = "../../../primitives/keyring" }
 node-executor = { version = "3.0.0-dev", path = "../executor" }
 node-primitives = { version = "2.0.0", path = "../primitives" }
