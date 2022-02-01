@@ -39,7 +39,7 @@ use codec::Encode;
 use frame_benchmarking::{account, benchmarks, whitelisted_caller};
 use frame_support::weights::Weight;
 use frame_system::RawOrigin;
-use pwasm_utils::parity_wasm::elements::{BlockType, BrTableData, Instruction, ValueType};
+use pwasm_utils::axia_wasm::elements::{BlockType, BrTableData, Instruction, ValueType};
 use sp_runtime::{
 	traits::{Bounded, Hash},
 	Perbill,

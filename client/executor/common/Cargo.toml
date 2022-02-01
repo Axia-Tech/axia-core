@@ -18,7 +18,7 @@ derive_more = "0.99.2"
 pwasm-utils = { git = "https://github.com/axia-tech/wasm-utils", branch = "v0.19.0", version = "0.19.0" }
 
 codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.3.1" }
-wasmi = "0.9.0"
+wasmi = { git = "https://github.com/axia-tech/wasmi", branch = "v0.9.1", version = "0.9.1" }
 sp-core = { version = "4.0.0-dev", path = "../../../primitives/core" }
 sc-allocator = { version = "4.0.0-dev", path = "../../allocator" }
 sp-wasm-interface = { version = "4.0.0-dev", path = "../../../primitives/wasm-interface" }

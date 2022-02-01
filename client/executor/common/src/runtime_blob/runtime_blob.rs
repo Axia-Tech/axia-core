@@ -19,7 +19,7 @@
 use crate::error::WasmError;
 use pwasm_utils::{
 	export_mutable_globals,
-	parity_wasm::elements::{deserialize_buffer, serialize, DataSegment, Internal, Module},
+	axia_wasm::elements::{deserialize_buffer, serialize, DataSegment, Internal, Module},
 };
 
 /// A bunch of information collected from a WebAssembly module.

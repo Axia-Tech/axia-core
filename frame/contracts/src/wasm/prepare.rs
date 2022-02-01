@@ -24,7 +24,7 @@ use crate::{
 	wasm::{env_def::ImportSatisfyCheck, PrefabWasmModule},
 	Config, Schedule,
 };
-use pwasm_utils::parity_wasm::elements::{self, External, Internal, MemoryType, Type, ValueType};
+use pwasm_utils::axia_wasm::elements::{self, External, Internal, MemoryType, Type, ValueType};
 use sp_runtime::traits::Hash;
 use sp_std::prelude::*;
 

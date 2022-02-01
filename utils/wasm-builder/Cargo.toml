@@ -18,6 +18,6 @@ cargo_metadata = "0.13.1"
 tempfile = "3.1.0"
 toml = "0.5.4"
 walkdir = "2.3.2"
-wasm-gc-api = "0.1.11"
+wasm-gc-api = { git = "https://github.com/axia-tech/wasm-gc", branch = "master", version = "0.1.11" }
 ansi_term = "0.12.1"
 sp-maybe-compressed-blob = { version = "4.0.0-dev", path = "../../primitives/maybe-compressed-blob" }

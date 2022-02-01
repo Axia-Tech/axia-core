@@ -26,7 +26,7 @@
 
 use crate::Config;
 use frame_support::traits::Get;
-use pwasm_utils::parity_wasm::{
+use pwasm_utils::axia_wasm::{
 	builder,
 	elements::{
 		self, BlockType, CustomSection, External, FuncBody, Instruction, Instructions, Module,
