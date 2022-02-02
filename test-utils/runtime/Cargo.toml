@@ -21,7 +21,8 @@ codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia
 scale-info = { git = "https://github.com/axia-tech/scale-info", branch = "v1.0.0", default-features = false, features = ["derive"] }
 sp-inherents = { version = "4.0.0-dev", default-features = false, path = "../../primitives/inherents" }
 sp-keyring = { version = "4.0.0-dev", optional = true, path = "../../primitives/keyring" }
-memory-db = { version = "0.27.0", default-features = false }
+# memory-db = { version = "0.27.0", default-features = false }
+memory-db = { git = "https://github.com/axia-tech/trie", branch = "master", version = "0.28.0", default-features = false }
 sp-offchain = { version = "4.0.0-dev", default-features = false, path = "../../primitives/offchain" }
 sp-core = { version = "4.0.0-dev", default-features = false, path = "../../primitives/core" }
 sp-std = { version = "4.0.0-dev", default-features = false, path = "../../primitives/std" }

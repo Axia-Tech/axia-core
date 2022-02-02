@@ -20,8 +20,9 @@ serde = "1.0.126"
 serde_json = "1.0.68"
 structopt = "0.3"
 derive_more = "0.99.2"
-kvdb = "0.10.0"
-kvdb-rocksdb = "0.14.0"
+kvdb = { git = "https://github.com/axia-tech/axia-common", branch = "master", version = "0.10.0" }
+kvdb-rocksdb = { git = "https://github.com/axia-tech/axia-common", branch = "master", version = "0.14.0" }
+
 sp-trie = { version = "4.0.0-dev", path = "../../../primitives/trie" }
 sp-core = { version = "4.0.0-dev", path = "../../../primitives/core" }
 sp-consensus = { version = "0.10.0-dev", path = "../../../primitives/consensus/common" }

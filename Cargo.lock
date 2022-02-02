@@ -310,9 +310,9 @@ dependencies = [
 
 [[package]]
 name = "async-std-resolver"
-version = "0.20.3"
+version = "0.20.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ed4e2c3da14d8ad45acb1e3191db7a918e9505b6f155b218e70a7c9a1a48c638"
+checksum = "dbf3e776afdf3a2477ef4854b85ba0dff3bd85792f685fb3c68948b4d304e4f0"
 dependencies = [
  "async-std",
  "async-trait",
@@ -446,15 +446,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "axia-tokio-ipc"
+version = "0.9.0"
+source = "git+https://github.com/axia-tech/axia-tokio-ipc?branch=v0.9.0#e77b33925484c30df8fb7c1cfbe45da6d7c4bf06"
+dependencies = [
+ "futures 0.3.19",
+ "libc",
+ "log 0.4.14",
+ "rand 0.7.3",
+ "tokio",
+ "winapi 0.3.9",
+]
+
+[[package]]
 name = "axia-util-mem"
 version = "0.10.2"
 source = "git+https://github.com/axia-tech/axia-common?branch=master#d121c78307b1b63a9e84f8503477eaa6a0051b77"
 dependencies = [
  "axia-util-mem-derive",
  "cfg-if 1.0.0",
+ "hashbrown",
  "impl-trait-for-tuples",
  "parking_lot 0.11.2",
  "primitive-types",
+ "smallvec 1.8.0",
  "winapi 0.3.9",
 ]
 
@@ -482,9 +497,21 @@ version = "0.42.2"
 source = "git+https://github.com/axia-tech/axia-wasm?branch=v0.42.2#bc11f3a80c1839cca419499a6a274c45c0be40c3"
 
 [[package]]
-name = "axia-wasm"
-version = "0.42.2"
-source = "git+https://github.com/axia-tech/axia-wasm#bc11f3a80c1839cca419499a6a274c45c0be40c3"
+name = "axia-ws"
+version = "0.11.1"
+source = "git+https://github.com/axia-tech/ws-rs?branch=v0.11.1#ffab02f4f9149116f077debc5f0ca742661f9990"
+dependencies = [
+ "byteorder",
+ "bytes 0.4.12",
+ "httparse",
+ "log 0.4.14",
+ "mio 0.6.23",
+ "mio-extras",
+ "rand 0.7.3",
+ "sha-1 0.8.2",
+ "slab",
+ "url 2.2.2",
+]
 
 [[package]]
 name = "backtrace"
@@ -603,7 +630,7 @@ dependencies = [
  "beefy-gadget",
  "beefy-primitives",
  "futures 0.3.19",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "jsonrpc-pubsub",
@@ -2615,6 +2642,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d23bd4e7b5eda0d0f3a307e8b381fdc8ba9000f26fbe912250c0a4cc3956364a"
 
 [[package]]
+name = "hash-db"
+version = "0.15.2"
+source = "git+https://github.com/axia-tech/trie?branch=master#aef933190f3645ca3e84cff6b82b84d15c18e189"
+
+[[package]]
 name = "hash256-std-hasher"
 version = "0.15.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3064,7 +3096,7 @@ dependencies = [
  "futures 0.3.19",
  "hyper 0.14.16",
  "hyper-tls",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-pubsub",
  "log 0.4.14",
  "serde",
@@ -3079,6 +3111,20 @@ name = "jsonrpc-core"
 version = "18.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "14f7f76aef2d054868398427f6c54943cf3d1caa9a7ec7d0c38d69df97a965eb"
+dependencies = [
+ "futures 0.3.19",
+ "futures-executor",
+ "futures-util",
+ "log 0.4.14",
+ "serde",
+ "serde_derive",
+ "serde_json",
+]
+
+[[package]]
+name = "jsonrpc-core"
+version = "18.0.0"
+source = "git+https://github.com/axia-tech/jsonrpc?branch=master#d80a0eb2dcd92d285cb4f9c36839a824f07a6587"
 dependencies = [
  "futures 0.3.19",
  "futures-executor",
@@ -3114,12 +3160,11 @@ dependencies = [
 [[package]]
 name = "jsonrpc-http-server"
 version = "18.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e1dea6e07251d9ce6a552abfb5d7ad6bc290a4596c8dcc3d795fae2bbdc1f3ff"
+source = "git+https://github.com/axia-tech/jsonrpc?branch=master#d80a0eb2dcd92d285cb4f9c36839a824f07a6587"
 dependencies = [
  "futures 0.3.19",
  "hyper 0.14.16",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (git+https://github.com/axia-tech/jsonrpc?branch=master)",
  "jsonrpc-server-utils",
  "log 0.4.14",
  "net2",
@@ -3130,14 +3175,13 @@ dependencies = [
 [[package]]
 name = "jsonrpc-ipc-server"
 version = "18.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "382bb0206323ca7cda3dcd7e245cea86d37d02457a02a975e3378fb149a48845"
+source = "git+https://github.com/axia-tech/jsonrpc?branch=master#d80a0eb2dcd92d285cb4f9c36839a824f07a6587"
 dependencies = [
+ "axia-tokio-ipc",
  "futures 0.3.19",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (git+https://github.com/axia-tech/jsonrpc?branch=master)",
  "jsonrpc-server-utils",
  "log 0.4.14",
- "parity-tokio-ipc",
  "parking_lot 0.11.2",
  "tower-service",
 ]
@@ -3149,7 +3193,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "240f87695e6c6f62fb37f05c02c04953cf68d6408b8c1c89de85c7a0125b1011"
 dependencies = [
  "futures 0.3.19",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static",
  "log 0.4.14",
  "parking_lot 0.11.2",
@@ -3160,13 +3204,12 @@ dependencies = [
 [[package]]
 name = "jsonrpc-server-utils"
 version = "18.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fa4fdea130485b572c39a460d50888beb00afb3e35de23ccd7fad8ff19f0e0d4"
+source = "git+https://github.com/axia-tech/jsonrpc?branch=master#d80a0eb2dcd92d285cb4f9c36839a824f07a6587"
 dependencies = [
  "bytes 1.1.0",
  "futures 0.3.19",
  "globset",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (git+https://github.com/axia-tech/jsonrpc?branch=master)",
  "lazy_static",
  "log 0.4.14",
  "tokio",
@@ -3178,14 +3221,13 @@ dependencies = [
 [[package]]
 name = "jsonrpc-ws-server"
 version = "18.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f892c7d766369475ab7b0669f417906302d7c0fb521285c0a0c92e52e7c8e946"
+source = "git+https://github.com/axia-tech/jsonrpc?branch=master#d80a0eb2dcd92d285cb4f9c36839a824f07a6587"
 dependencies = [
+ "axia-ws",
  "futures 0.3.19",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (git+https://github.com/axia-tech/jsonrpc?branch=master)",
  "jsonrpc-server-utils",
  "log 0.4.14",
- "parity-ws",
  "parking_lot 0.11.2",
  "slab",
 ]
@@ -3258,7 +3300,7 @@ version = "0.15.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "711adba9940a039f4374fc5724c0a5eaca84a2d558cce62256bfe26f0dbef05e"
 dependencies = [
- "hash-db",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "hash256-std-hasher",
  "tiny-keccak",
 ]
@@ -3285,36 +3327,33 @@ dependencies = [
 [[package]]
 name = "kvdb"
 version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "45a3f58dc069ec0e205a27f5b45920722a46faed802a0541538241af6228f512"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#d121c78307b1b63a9e84f8503477eaa6a0051b77"
 dependencies = [
- "parity-util-mem",
+ "axia-util-mem",
  "smallvec 1.8.0",
 ]
 
 [[package]]
 name = "kvdb-memorydb"
 version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c3b6b85fc643f5acd0bffb2cc8a6d150209379267af0d41db72170021841f9f5"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#d121c78307b1b63a9e84f8503477eaa6a0051b77"
 dependencies = [
+ "axia-util-mem",
  "kvdb",
- "parity-util-mem",
  "parking_lot 0.11.2",
 ]
 
 [[package]]
 name = "kvdb-rocksdb"
 version = "0.14.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9b1b6ea8f2536f504b645ad78419c8246550e19d2c3419a167080ce08edee35a"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#d121c78307b1b63a9e84f8503477eaa6a0051b77"
 dependencies = [
+ "axia-util-mem",
  "fs-swap",
  "kvdb",
  "log 0.4.14",
  "num_cpus",
  "owning_ref",
- "parity-util-mem",
  "parking_lot 0.11.2",
  "regex",
  "rocksdb",
@@ -4184,13 +4223,12 @@ dependencies = [
 
 [[package]]
 name = "memory-db"
-version = "0.27.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "de006e09d04fc301a5f7e817b75aa49801c4479a8af753764416b085337ddcc5"
+version = "0.28.0"
+source = "git+https://github.com/axia-tech/trie?branch=master#aef933190f3645ca3e84cff6b82b84d15c18e189"
 dependencies = [
- "hash-db",
+ "axia-util-mem",
+ "hash-db 0.15.2 (git+https://github.com/axia-tech/trie?branch=master)",
  "hashbrown",
- "parity-util-mem",
 ]
 
 [[package]]
@@ -4508,7 +4546,7 @@ dependencies = [
  "derive_more",
  "fs_extra",
  "futures 0.3.19",
- "hash-db",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "hex",
  "kvdb",
  "kvdb-rocksdb",
@@ -4677,7 +4715,7 @@ dependencies = [
 name = "node-rpc"
 version = "3.0.0-dev"
 dependencies = [
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "node-primitives",
  "pallet-contracts-rpc",
  "pallet-mmr-rpc",
@@ -4810,7 +4848,7 @@ version = "3.0.0"
 dependencies = [
  "frame-benchmarking",
  "frame-benchmarking-cli",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "node-template-runtime",
  "pallet-transaction-payment-rpc",
  "sc-basic-authorship",
@@ -5416,7 +5454,7 @@ name = "pallet-contracts-rpc"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "pallet-contracts-primitives",
@@ -5743,7 +5781,7 @@ name = "pallet-mmr-rpc"
 version = "3.0.0"
 dependencies = [
  "axia-scale-codec",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "pallet-mmr-primitives",
@@ -6122,7 +6160,7 @@ name = "pallet-transaction-payment-rpc"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "pallet-transaction-payment-rpc-runtime-api",
@@ -6235,64 +6273,6 @@ name = "parity-send-wrapper"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "aa9777aa91b8ad9dd5aaa04a9b6bcb02c7f1deb952fca5a66034d5e63afc5c6f"
-
-[[package]]
-name = "parity-tokio-ipc"
-version = "0.9.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9981e32fb75e004cc148f5fb70342f393830e0a4aa62e3cc93b50976218d42b6"
-dependencies = [
- "futures 0.3.19",
- "libc",
- "log 0.4.14",
- "rand 0.7.3",
- "tokio",
- "winapi 0.3.9",
-]
-
-[[package]]
-name = "parity-util-mem"
-version = "0.10.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6f4cb4e169446179cbc6b8b6320cc9fca49bd2e94e8db25f25f200a8ea774770"
-dependencies = [
- "cfg-if 1.0.0",
- "hashbrown",
- "impl-trait-for-tuples",
- "parity-util-mem-derive",
- "parking_lot 0.11.2",
- "smallvec 1.8.0",
- "winapi 0.3.9",
-]
-
-[[package]]
-name = "parity-util-mem-derive"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f557c32c6d268a07c921471619c0295f5efad3a0e76d4f97a05c091a51d110b2"
-dependencies = [
- "proc-macro2",
- "syn",
- "synstructure",
-]
-
-[[package]]
-name = "parity-ws"
-version = "0.11.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5983d3929ad50f12c3eb9a6743f19d691866ecd44da74c0a3308c3f8a56df0c6"
-dependencies = [
- "byteorder",
- "bytes 0.4.12",
- "httparse",
- "log 0.4.14",
- "mio 0.6.23",
- "mio-extras",
- "rand 0.7.3",
- "sha-1 0.8.2",
- "slab",
- "url 2.2.2",
-]
 
 [[package]]
 name = "parking"
@@ -6793,7 +6773,7 @@ name = "pwasm-utils"
 version = "0.19.0"
 source = "git+https://github.com/axia-tech/wasm-utils?branch=v0.19.0#529262673bd7c39e63a7b7a163bf2c1a1eac7877"
 dependencies = [
- "axia-wasm 0.42.2 (git+https://github.com/axia-tech/axia-wasm?branch=v0.42.2)",
+ "axia-wasm 0.42.2",
  "byteorder",
  "log 0.4.14",
 ]
@@ -7543,7 +7523,7 @@ dependencies = [
  "axia-scale-codec",
  "fnv",
  "futures 0.3.19",
- "hash-db",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.14",
  "parking_lot 0.11.2",
  "sc-executor",
@@ -7572,7 +7552,7 @@ version = "0.10.0-dev"
 dependencies = [
  "axia-db",
  "axia-scale-codec",
- "hash-db",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "kvdb",
  "kvdb-memorydb",
  "kvdb-rocksdb",
@@ -7712,7 +7692,7 @@ version = "0.10.0-dev"
 dependencies = [
  "derive_more",
  "futures 0.3.19",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "sc-consensus",
@@ -7756,7 +7736,7 @@ dependencies = [
  "axia-scale-codec",
  "derive_more",
  "futures 0.3.19",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "log 0.4.14",
@@ -7920,7 +7900,7 @@ name = "sc-executor-wasmtime"
 version = "0.10.0-dev"
 dependencies = [
  "axia-scale-codec",
- "axia-wasm 0.42.2 (git+https://github.com/axia-tech/axia-wasm)",
+ "axia-wasm 0.42.2",
  "cfg-if 1.0.0",
  "libc",
  "log 0.4.14",
@@ -7979,7 +7959,7 @@ dependencies = [
  "derive_more",
  "finality-grandpa 0.14.4",
  "futures 0.3.19",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "jsonrpc-pubsub",
@@ -8034,7 +8014,7 @@ name = "sc-light"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
- "hash-db",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "parking_lot 0.11.2",
  "sc-client-api",
  "sc-executor",
@@ -8211,8 +8191,8 @@ dependencies = [
  "assert_matches",
  "axia-scale-codec",
  "futures 0.3.19",
- "hash-db",
- "jsonrpc-core",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-pubsub",
  "lazy_static",
  "log 0.4.14",
@@ -8247,7 +8227,7 @@ version = "0.10.0-dev"
 dependencies = [
  "axia-scale-codec",
  "futures 0.3.19",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "jsonrpc-pubsub",
@@ -8270,7 +8250,7 @@ name = "sc-rpc-server"
 version = "4.0.0-dev"
 dependencies = [
  "futures 0.3.19",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-http-server",
  "jsonrpc-ipc-server",
  "jsonrpc-pubsub",
@@ -8306,8 +8286,8 @@ dependencies = [
  "exit-future",
  "futures 0.3.19",
  "futures-timer 3.0.2",
- "hash-db",
- "jsonrpc-core",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-pubsub",
  "log 0.4.14",
  "parking_lot 0.11.2",
@@ -8416,7 +8396,7 @@ name = "sc-sync-state-rpc"
 version = "0.10.0-dev"
 dependencies = [
  "axia-scale-codec",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "sc-chain-spec",
@@ -8982,7 +8962,7 @@ name = "sp-api"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
- "hash-db",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.14",
  "sp-api-proc-macro",
  "sp-core",
@@ -9231,7 +9211,7 @@ dependencies = [
  "dyn-clonable",
  "ed25519-dalek",
  "futures 0.3.19",
- "hash-db",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "hash256-std-hasher",
  "hex",
  "hex-literal",
@@ -9331,7 +9311,7 @@ version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
  "futures 0.3.19",
- "hash-db",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "libsecp256k1 0.6.0",
  "log 0.4.14",
  "parking_lot 0.11.2",
@@ -9601,7 +9581,7 @@ name = "sp-state-machine"
 version = "0.10.0-dev"
 dependencies = [
  "axia-scale-codec",
- "hash-db",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "hex-literal",
  "log 0.4.14",
  "num-traits",
@@ -9717,7 +9697,7 @@ version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
  "criterion",
- "hash-db",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "hex-literal",
  "memory-db",
  "scale-info",
@@ -9734,7 +9714,7 @@ name = "sp-version"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
- "axia-wasm 0.42.2 (git+https://github.com/axia-tech/axia-wasm)",
+ "axia-wasm 0.42.2",
  "impl-serde 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "scale-info",
  "serde",
@@ -9950,7 +9930,7 @@ dependencies = [
  "axia-scale-codec",
  "frame-system-rpc-runtime-api",
  "futures 0.3.19",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "log 0.4.14",
@@ -10212,7 +10192,7 @@ version = "0.9.0"
 dependencies = [
  "frame-system",
  "futures 0.3.19",
- "jsonrpc-core",
+ "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.14",
  "num-traits",
  "sc-basic-authorship",
@@ -10658,7 +10638,7 @@ version = "0.22.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9eac131e334e81b6b3be07399482042838adcd7957aa0010231d0813e39e02fa"
 dependencies = [
- "hash-db",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "hashbrown",
  "log 0.4.14",
  "rustc-hex",
@@ -10671,7 +10651,7 @@ version = "0.16.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "652931506d2c1244d7217a70b99f56718a7b4161b37f04e7cd868072a99f68cd"
 dependencies = [
- "hash-db",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -10680,15 +10660,15 @@ version = "0.15.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c3161ba520ab28cd8e6b68e1126f1009f6e335339d1a73b978139011703264c8"
 dependencies = [
- "hash-db",
+ "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "keccak-hasher",
 ]
 
 [[package]]
 name = "trust-dns-proto"
-version = "0.20.3"
+version = "0.20.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ad0d7f5db438199a6e2609debe3f69f808d074e0a2888ee0bccb45fe234d03f4"
+checksum = "ca94d4e9feb6a181c690c4040d7a24ef34018d8313ac5044a61d21222ae24e31"
 dependencies = [
  "async-trait",
  "cfg-if 1.0.0",
@@ -10710,9 +10690,9 @@ dependencies = [
 
 [[package]]
 name = "trust-dns-resolver"
-version = "0.20.3"
+version = "0.20.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f6ad17b608a64bd0735e67bde16b0636f8aa8591f831a25d18443ed00a699770"
+checksum = "ecae383baad9995efaa34ce8e57d12c3f305e545887472a492b838f4b5cfb77a"
 dependencies = [
  "cfg-if 1.0.0",
  "futures-util",
@@ -11320,7 +11300,7 @@ name = "wasmi"
 version = "0.9.1"
 source = "git+https://github.com/axia-tech/wasmi?branch=v0.9.1#86a4f6400b4c4affd7d8940bb192f6fdda79e322"
 dependencies = [
- "axia-wasm 0.42.2 (git+https://github.com/axia-tech/axia-wasm?branch=v0.42.2)",
+ "axia-wasm 0.42.2",
  "downcast-rs",
  "errno",
  "libc",
@@ -11336,7 +11316,7 @@ name = "wasmi-validation"
 version = "0.4.1"
 source = "git+https://github.com/axia-tech/wasmi?branch=v0.9.1#86a4f6400b4c4affd7d8940bb192f6fdda79e322"
 dependencies = [
- "axia-wasm 0.42.2 (git+https://github.com/axia-tech/axia-wasm?branch=v0.42.2)",
+ "axia-wasm 0.42.2",
 ]
 
 [[package]]

@@ -15,9 +15,9 @@ targets = ["x86_64-unknown-linux-gnu"]
 [dependencies]
 parking_lot = "0.11.1"
 log = "0.4.8"
-kvdb = "0.10.0"
-kvdb-rocksdb = { version = "0.14.0", optional = true }
-kvdb-memorydb = "0.10.0"
+kvdb = { git = "https://github.com/axia-tech/axia-common", branch = "master", version = "0.10.0" }
+kvdb-rocksdb = { git = "https://github.com/axia-tech/axia-common", branch = "master", version = "0.14.0", optional = true }
+kvdb-memorydb = { git = "https://github.com/axia-tech/axia-common", branch = "master", version = "0.10.0" }
 linked-hash-map = "0.5.4"
 hash-db = "0.15.2"
 codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.3.1", features = [
@@ -39,7 +39,7 @@ axia-db = { git = "https://github.com/axia-tech/axia-db", version = "0.3.5", opt
 sp-tracing = { version = "4.0.0-dev", path = "../../primitives/tracing" }
 substrate-test-runtime-client = { version = "2.0.0", path = "../../test-utils/runtime/client" }
 quickcheck = "1.0.3"
-kvdb-rocksdb = "0.14.0"
+kvdb-rocksdb = { git = "https://github.com/axia-tech/axia-common", branch = "master", version = "0.14.0" }
 tempfile = "3"
 
 [features]
