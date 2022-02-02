@@ -15,10 +15,10 @@ sp-blockchain = { version = "4.0.0-dev", path = "../../../primitives/blockchain"
 sp-core = { version = "4.0.0-dev", path = "../../../primitives/core" }
 sp-runtime = { version = "4.0.0-dev", path = "../../../primitives/runtime" }
 finality-grandpa = { git = "https://github.com/axia-tech/finality-grandpa", branch = "v0.14.4", features = ["derive-codec"] }
-jsonrpc-core = "18.0.0"
-jsonrpc-core-client = "18.0.0"
-jsonrpc-derive = "18.0.0"
-jsonrpc-pubsub = "18.0.0"
+jsonrpc-core = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
+jsonrpc-core-client = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
+jsonrpc-derive = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
+jsonrpc-pubsub = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
 futures = "0.3.16"
 serde = { version = "1.0.105", features = ["derive"] }
 serde_json = "1.0.50"

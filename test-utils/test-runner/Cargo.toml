@@ -50,5 +50,5 @@ log = "0.4.8"
 futures = "0.3.16"
 tokio = { version = "1.10", features = ["signal"] }
 # Calling RPC
-jsonrpc-core = "18.0"
+jsonrpc-core = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
 num-traits = "0.2.14"

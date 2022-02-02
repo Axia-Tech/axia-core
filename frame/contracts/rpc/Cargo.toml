@@ -14,9 +14,9 @@ targets = ["x86_64-unknown-linux-gnu"]
 
 [dependencies]
 codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.3.1" }
-jsonrpc-core = "18.0.0"
-jsonrpc-core-client = "18.0.0"
-jsonrpc-derive = "18.0.0"
+jsonrpc-core = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
+jsonrpc-core-client = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
+jsonrpc-derive = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
 serde = { version = "1", features = ["derive"] }
 
 # Substrate Dependencies

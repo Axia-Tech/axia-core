@@ -12,7 +12,7 @@ targets = ["x86_64-unknown-linux-gnu"]
 
 [dependencies]
 futures = "0.3.16"
-jsonrpc-core-client = { version = "18.0.0", default-features = false, features = [
+jsonrpc-core-client = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0", default-features = false, features = [
     "http",
 ] }
 node-primitives = { version = "2.0.0", path = "../primitives" }

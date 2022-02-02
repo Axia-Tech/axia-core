@@ -16,7 +16,7 @@ targets = ["x86_64-unknown-linux-gnu"]
 
 [dependencies]
 futures = "0.3.16"
-jsonrpc-client-transports = { version = "18.0.0", features = ["http"] }
+jsonrpc-client-transports = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0", features = ["http"] }
 codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.3.1" }
 serde = "1"
 frame-support = { version = "4.0.0-dev", path = "../../../../frame/support" }

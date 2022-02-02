@@ -10,10 +10,10 @@ futures = "0.3.16"
 log = "0.4"
 serde = { version = "1.0.130", features = ["derive"] }
 
-jsonrpc-core = "18.0.0"
-jsonrpc-core-client = "18.0.0"
-jsonrpc-derive = "18.0.0"
-jsonrpc-pubsub = "18.0.0"
+jsonrpc-core = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
+jsonrpc-core-client = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
+jsonrpc-derive = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
+jsonrpc-pubsub = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
 
 codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.3.1", features = ["derive"] }
 

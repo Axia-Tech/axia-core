@@ -24,8 +24,8 @@ test-helpers = []
 [dependencies]
 thiserror = "1.0.21"
 futures = "0.3.16"
-jsonrpc-pubsub = "18.0"
-jsonrpc-core = "18.0"
+jsonrpc-pubsub = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
+jsonrpc-core = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
 rand = "0.7.3"
 parking_lot = "0.11.1"
 log = "0.4.11"

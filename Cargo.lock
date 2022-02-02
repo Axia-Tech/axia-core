@@ -461,11 +461,10 @@ dependencies = [
 [[package]]
 name = "axia-util-mem"
 version = "0.10.2"
-source = "git+https://github.com/axia-tech/axia-common?branch=master#d121c78307b1b63a9e84f8503477eaa6a0051b77"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
 dependencies = [
- "axia-util-mem-derive",
+ "axia-util-mem-derive 0.1.0 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "cfg-if 1.0.0",
- "hashbrown",
  "impl-trait-for-tuples",
  "parking_lot 0.11.2",
  "primitive-types",
@@ -474,9 +473,32 @@ dependencies = [
 ]
 
 [[package]]
+name = "axia-util-mem"
+version = "0.10.2"
+source = "git+https://github.com/axia-tech/axia-common#22e9ba1e4f54890265f7405727857a02dd4846b3"
+dependencies = [
+ "axia-util-mem-derive 0.1.0 (git+https://github.com/axia-tech/axia-common)",
+ "cfg-if 1.0.0",
+ "hashbrown",
+ "impl-trait-for-tuples",
+ "parking_lot 0.11.2",
+ "winapi 0.3.9",
+]
+
+[[package]]
 name = "axia-util-mem-derive"
 version = "0.1.0"
-source = "git+https://github.com/axia-tech/axia-common?branch=master#d121c78307b1b63a9e84f8503477eaa6a0051b77"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
+dependencies = [
+ "proc-macro2",
+ "syn",
+ "synstructure",
+]
+
+[[package]]
+name = "axia-util-mem-derive"
+version = "0.1.0"
+source = "git+https://github.com/axia-tech/axia-common#22e9ba1e4f54890265f7405727857a02dd4846b3"
 dependencies = [
  "proc-macro2",
  "syn",
@@ -630,7 +652,7 @@ dependencies = [
  "beefy-gadget",
  "beefy-primitives",
  "futures 0.3.19",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "jsonrpc-pubsub",
@@ -1980,7 +2002,7 @@ dependencies = [
 [[package]]
 name = "fixed-hash"
 version = "0.7.0"
-source = "git+https://github.com/axia-tech/axia-common?branch=master#d121c78307b1b63a9e84f8503477eaa6a0051b77"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
 dependencies = [
  "byteorder",
  "rand 0.8.4",
@@ -2143,7 +2165,7 @@ version = "4.0.0-dev"
 dependencies = [
  "assert_matches",
  "axia-scale-codec",
- "axia-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "bitflags",
  "frame-metadata",
  "frame-support-procedural",
@@ -2644,7 +2666,7 @@ checksum = "d23bd4e7b5eda0d0f3a307e8b381fdc8ba9000f26fbe912250c0a4cc3956364a"
 [[package]]
 name = "hash-db"
 version = "0.15.2"
-source = "git+https://github.com/axia-tech/trie?branch=master#aef933190f3645ca3e84cff6b82b84d15c18e189"
+source = "git+https://github.com/axia-tech/trie?branch=master#ee16fe53f6bfc3cfba00fa80fcea6998244c7eb2"
 
 [[package]]
 name = "hash256-std-hasher"
@@ -2942,7 +2964,7 @@ dependencies = [
 [[package]]
 name = "impl-codec"
 version = "0.5.1"
-source = "git+https://github.com/axia-tech/axia-common?branch=master#d121c78307b1b63a9e84f8503477eaa6a0051b77"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
 dependencies = [
  "axia-scale-codec",
 ]
@@ -2959,7 +2981,7 @@ dependencies = [
 [[package]]
 name = "impl-serde"
 version = "0.3.2"
-source = "git+https://github.com/axia-tech/axia-common?branch=master#d121c78307b1b63a9e84f8503477eaa6a0051b77"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
 dependencies = [
  "serde",
 ]
@@ -3089,14 +3111,13 @@ dependencies = [
 [[package]]
 name = "jsonrpc-client-transports"
 version = "18.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d2b99d4207e2a04fb4581746903c2bb7eb376f88de9c699d0f3e10feeac0cd3a"
+source = "git+https://github.com/axia-tech/jsonrpc?branch=master#d80a0eb2dcd92d285cb4f9c36839a824f07a6587"
 dependencies = [
  "derive_more",
  "futures 0.3.19",
  "hyper 0.14.16",
  "hyper-tls",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "jsonrpc-pubsub",
  "log 0.4.14",
  "serde",
@@ -3104,21 +3125,6 @@ dependencies = [
  "tokio",
  "url 1.7.2",
  "websocket",
-]
-
-[[package]]
-name = "jsonrpc-core"
-version = "18.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "14f7f76aef2d054868398427f6c54943cf3d1caa9a7ec7d0c38d69df97a965eb"
-dependencies = [
- "futures 0.3.19",
- "futures-executor",
- "futures-util",
- "log 0.4.14",
- "serde",
- "serde_derive",
- "serde_json",
 ]
 
 [[package]]
@@ -3138,8 +3144,7 @@ dependencies = [
 [[package]]
 name = "jsonrpc-core-client"
 version = "18.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b51da17abecbdab3e3d4f26b01c5ec075e88d3abe3ab3b05dc9aa69392764ec0"
+source = "git+https://github.com/axia-tech/jsonrpc?branch=master#d80a0eb2dcd92d285cb4f9c36839a824f07a6587"
 dependencies = [
  "futures 0.3.19",
  "jsonrpc-client-transports",
@@ -3148,8 +3153,7 @@ dependencies = [
 [[package]]
 name = "jsonrpc-derive"
 version = "18.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5b939a78fa820cdfcb7ee7484466746a7377760970f6f9c6fe19f9edcc8a38d2"
+source = "git+https://github.com/axia-tech/jsonrpc?branch=master#d80a0eb2dcd92d285cb4f9c36839a824f07a6587"
 dependencies = [
  "proc-macro-crate 0.1.5",
  "proc-macro2",
@@ -3164,7 +3168,7 @@ source = "git+https://github.com/axia-tech/jsonrpc?branch=master#d80a0eb2dcd92d2
 dependencies = [
  "futures 0.3.19",
  "hyper 0.14.16",
- "jsonrpc-core 18.0.0 (git+https://github.com/axia-tech/jsonrpc?branch=master)",
+ "jsonrpc-core",
  "jsonrpc-server-utils",
  "log 0.4.14",
  "net2",
@@ -3179,7 +3183,7 @@ source = "git+https://github.com/axia-tech/jsonrpc?branch=master#d80a0eb2dcd92d2
 dependencies = [
  "axia-tokio-ipc",
  "futures 0.3.19",
- "jsonrpc-core 18.0.0 (git+https://github.com/axia-tech/jsonrpc?branch=master)",
+ "jsonrpc-core",
  "jsonrpc-server-utils",
  "log 0.4.14",
  "parking_lot 0.11.2",
@@ -3189,11 +3193,10 @@ dependencies = [
 [[package]]
 name = "jsonrpc-pubsub"
 version = "18.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "240f87695e6c6f62fb37f05c02c04953cf68d6408b8c1c89de85c7a0125b1011"
+source = "git+https://github.com/axia-tech/jsonrpc?branch=master#d80a0eb2dcd92d285cb4f9c36839a824f07a6587"
 dependencies = [
  "futures 0.3.19",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "lazy_static",
  "log 0.4.14",
  "parking_lot 0.11.2",
@@ -3209,7 +3212,7 @@ dependencies = [
  "bytes 1.1.0",
  "futures 0.3.19",
  "globset",
- "jsonrpc-core 18.0.0 (git+https://github.com/axia-tech/jsonrpc?branch=master)",
+ "jsonrpc-core",
  "lazy_static",
  "log 0.4.14",
  "tokio",
@@ -3225,7 +3228,7 @@ source = "git+https://github.com/axia-tech/jsonrpc?branch=master#d80a0eb2dcd92d2
 dependencies = [
  "axia-ws",
  "futures 0.3.19",
- "jsonrpc-core 18.0.0 (git+https://github.com/axia-tech/jsonrpc?branch=master)",
+ "jsonrpc-core",
  "jsonrpc-server-utils",
  "log 0.4.14",
  "parking_lot 0.11.2",
@@ -3327,18 +3330,18 @@ dependencies = [
 [[package]]
 name = "kvdb"
 version = "0.10.0"
-source = "git+https://github.com/axia-tech/axia-common?branch=master#d121c78307b1b63a9e84f8503477eaa6a0051b77"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
 dependencies = [
- "axia-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "smallvec 1.8.0",
 ]
 
 [[package]]
 name = "kvdb-memorydb"
 version = "0.10.0"
-source = "git+https://github.com/axia-tech/axia-common?branch=master#d121c78307b1b63a9e84f8503477eaa6a0051b77"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
 dependencies = [
- "axia-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "kvdb",
  "parking_lot 0.11.2",
 ]
@@ -3346,9 +3349,9 @@ dependencies = [
 [[package]]
 name = "kvdb-rocksdb"
 version = "0.14.0"
-source = "git+https://github.com/axia-tech/axia-common?branch=master#d121c78307b1b63a9e84f8503477eaa6a0051b77"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
 dependencies = [
- "axia-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "fs-swap",
  "kvdb",
  "log 0.4.14",
@@ -4223,10 +4226,10 @@ dependencies = [
 
 [[package]]
 name = "memory-db"
-version = "0.28.0"
-source = "git+https://github.com/axia-tech/trie?branch=master#aef933190f3645ca3e84cff6b82b84d15c18e189"
+version = "0.27.0"
+source = "git+https://github.com/axia-tech/trie?branch=master#ee16fe53f6bfc3cfba00fa80fcea6998244c7eb2"
 dependencies = [
- "axia-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common)",
  "hash-db 0.15.2 (git+https://github.com/axia-tech/trie?branch=master)",
  "hashbrown",
 ]
@@ -4542,7 +4545,7 @@ name = "node-bench"
 version = "0.9.0-dev"
 dependencies = [
  "axia-db",
- "axia-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "derive_more",
  "fs_extra",
  "futures 0.3.19",
@@ -4715,7 +4718,7 @@ dependencies = [
 name = "node-rpc"
 version = "3.0.0-dev"
 dependencies = [
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "node-primitives",
  "pallet-contracts-rpc",
  "pallet-mmr-rpc",
@@ -4848,7 +4851,7 @@ version = "3.0.0"
 dependencies = [
  "frame-benchmarking",
  "frame-benchmarking-cli",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "node-template-runtime",
  "pallet-transaction-payment-rpc",
  "sc-basic-authorship",
@@ -5454,7 +5457,7 @@ name = "pallet-contracts-rpc"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "pallet-contracts-primitives",
@@ -5781,7 +5784,7 @@ name = "pallet-mmr-rpc"
 version = "3.0.0"
 dependencies = [
  "axia-scale-codec",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "pallet-mmr-primitives",
@@ -6160,7 +6163,7 @@ name = "pallet-transaction-payment-rpc"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "pallet-transaction-payment-rpc-runtime-api",
@@ -6627,7 +6630,7 @@ dependencies = [
 [[package]]
 name = "primitive-types"
 version = "0.10.1"
-source = "git+https://github.com/axia-tech/axia-common?branch=master#d121c78307b1b63a9e84f8503477eaa6a0051b77"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
 dependencies = [
  "fixed-hash",
  "impl-codec",
@@ -7692,7 +7695,7 @@ version = "0.10.0-dev"
 dependencies = [
  "derive_more",
  "futures 0.3.19",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "sc-consensus",
@@ -7736,7 +7739,7 @@ dependencies = [
  "axia-scale-codec",
  "derive_more",
  "futures 0.3.19",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "log 0.4.14",
@@ -7959,7 +7962,7 @@ dependencies = [
  "derive_more",
  "finality-grandpa 0.14.4",
  "futures 0.3.19",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "jsonrpc-pubsub",
@@ -7983,7 +7986,7 @@ name = "sc-informant"
 version = "0.10.0-dev"
 dependencies = [
  "ansi_term",
- "axia-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "futures 0.3.19",
  "futures-timer 3.0.2",
  "log 0.4.14",
@@ -8192,7 +8195,7 @@ dependencies = [
  "axia-scale-codec",
  "futures 0.3.19",
  "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "jsonrpc-pubsub",
  "lazy_static",
  "log 0.4.14",
@@ -8227,7 +8230,7 @@ version = "0.10.0-dev"
 dependencies = [
  "axia-scale-codec",
  "futures 0.3.19",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "jsonrpc-pubsub",
@@ -8250,7 +8253,7 @@ name = "sc-rpc-server"
 version = "4.0.0-dev"
 dependencies = [
  "futures 0.3.19",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "jsonrpc-http-server",
  "jsonrpc-ipc-server",
  "jsonrpc-pubsub",
@@ -8281,13 +8284,13 @@ dependencies = [
  "async-std",
  "async-trait",
  "axia-scale-codec",
- "axia-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "directories",
  "exit-future",
  "futures 0.3.19",
  "futures-timer 3.0.2",
  "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "jsonrpc-pubsub",
  "log 0.4.14",
  "parking_lot 0.11.2",
@@ -8383,8 +8386,8 @@ name = "sc-state-db"
 version = "0.10.0-dev"
 dependencies = [
  "axia-scale-codec",
- "axia-util-mem",
- "axia-util-mem-derive",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
+ "axia-util-mem-derive 0.1.0 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "log 0.4.14",
  "parking_lot 0.11.2",
  "sc-client-api",
@@ -8396,7 +8399,7 @@ name = "sc-sync-state-rpc"
 version = "0.10.0-dev"
 dependencies = [
  "axia-scale-codec",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "sc-chain-spec",
@@ -8475,7 +8478,7 @@ version = "4.0.0-dev"
 dependencies = [
  "assert_matches",
  "axia-scale-codec",
- "axia-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "criterion",
  "futures 0.3.19",
  "hex",
@@ -9203,7 +9206,7 @@ name = "sp-core"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
- "axia-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "base58",
  "blake2-rfc",
  "byteorder",
@@ -9438,7 +9441,7 @@ name = "sp-runtime"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
- "axia-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "either",
  "hash256-std-hasher",
  "impl-trait-for-tuples",
@@ -9635,7 +9638,7 @@ name = "sp-test-primitives"
 version = "2.0.0"
 dependencies = [
  "axia-scale-codec",
- "axia-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "serde",
  "sp-application-crypto",
  "sp-core",
@@ -9930,7 +9933,7 @@ dependencies = [
  "axia-scale-codec",
  "frame-system-rpc-runtime-api",
  "futures 0.3.19",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "jsonrpc-core-client",
  "jsonrpc-derive",
  "log 0.4.14",
@@ -9991,7 +9994,7 @@ name = "substrate-test-runtime"
 version = "2.0.0"
 dependencies = [
  "axia-scale-codec",
- "axia-util-mem",
+ "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common?branch=master)",
  "cfg-if 1.0.0",
  "frame-support",
  "frame-system",
@@ -10192,7 +10195,7 @@ version = "0.9.0"
 dependencies = [
  "frame-system",
  "futures 0.3.19",
- "jsonrpc-core 18.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "jsonrpc-core",
  "log 0.4.14",
  "num-traits",
  "sc-basic-authorship",
@@ -10783,7 +10786,7 @@ checksum = "56dee185309b50d1f11bfedef0fe6d036842e3fb77413abef29f8f8d1c5d4c1c"
 [[package]]
 name = "uint"
 version = "0.9.1"
-source = "git+https://github.com/axia-tech/axia-common?branch=master#d121c78307b1b63a9e84f8503477eaa6a0051b77"
+source = "git+https://github.com/axia-tech/axia-common?branch=master#22e9ba1e4f54890265f7405727857a02dd4846b3"
 dependencies = [
  "byteorder",
  "crunchy",

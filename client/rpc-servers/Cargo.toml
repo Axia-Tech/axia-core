@@ -14,8 +14,8 @@ targets = ["x86_64-unknown-linux-gnu"]
 
 [dependencies]
 futures = "0.3.16"
-jsonrpc-core = "18.0.0"
-pubsub = { package = "jsonrpc-pubsub", version = "18.0.0" }
+jsonrpc-core = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
+pubsub = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", package = "jsonrpc-pubsub", version = "18.0.0" }
 log = "0.4.8"
 prometheus-endpoint = { package = "substrate-prometheus-endpoint", path = "../../utils/prometheus", version = "0.9.0"}
 serde_json = "1.0.68"

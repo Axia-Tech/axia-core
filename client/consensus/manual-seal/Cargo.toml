@@ -15,9 +15,9 @@ targets = ["x86_64-unknown-linux-gnu"]
 [dependencies]
 derive_more = "0.99.2"
 futures = "0.3.9"
-jsonrpc-core = "18.0.0"
-jsonrpc-core-client = "18.0.0"
-jsonrpc-derive = "18.0.0"
+jsonrpc-core = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
+jsonrpc-core-client = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
+jsonrpc-derive = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
 log = "0.4.8"
 codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.3.1" }
 serde = { version = "1.0", features = ["derive"] }

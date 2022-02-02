@@ -27,3 +27,37 @@ version = "0.42.0"
 
 name = "parity-ws"
 version = "0.11.1"
+
+*************************************************
+
+name = "jsonrpc-client-transports"
+version = "18.0.0"
+
+name = "jsonrpc-core"
+version = "18.0.0"
+
+name = "jsonrpc-core-client"
+version = "18.0.0"
+
+name = "jsonrpc-derive"
+version = "18.0.0"
+
+name = "jsonrpc-http-server"
+version = "18.0.0"
+
+name = "jsonrpc-ipc-server"
+version = "18.0.0"
+
+name = "jsonrpc-pubsub"
+version = "18.0.0"
+
+name = "jsonrpc-server-utils"
+version = "18.0.0"
+
+name = "jsonrpc-ws-server"
+version = "18.0.0"
+
+git = "https://github.com/axia-tech/jsonrpc", branch = "master",
+jsonrpc-core-client = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
+jsonrpc-derive = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
+jsonrpc-pubsub = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }

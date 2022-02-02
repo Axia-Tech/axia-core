@@ -38,7 +38,7 @@ sp-runtime = { version = "4.0.0-dev", path = "../../../primitives/runtime" }
 sp-timestamp = { version = "4.0.0-dev", path = "../../../primitives/timestamp" }
 
 # These dependencies are used for the node template's RPCs
-jsonrpc-core = "18.0.0"
+jsonrpc-core = { git = "https://github.com/axia-tech/jsonrpc", branch = "master", version = "18.0.0" }
 sc-rpc = { version = "4.0.0-dev", path = "../../../client/rpc" }
 sp-api = { version = "4.0.0-dev", path = "../../../primitives/api" }
 sc-rpc-api = { version = "0.10.0-dev", path = "../../../client/rpc-api" }
