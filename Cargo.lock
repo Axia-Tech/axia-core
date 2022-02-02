@@ -2660,12 +2660,6 @@ dependencies = [
 [[package]]
 name = "hash-db"
 version = "0.15.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d23bd4e7b5eda0d0f3a307e8b381fdc8ba9000f26fbe912250c0a4cc3956364a"
-
-[[package]]
-name = "hash-db"
-version = "0.15.2"
 source = "git+https://github.com/axia-tech/trie?branch=master#ee16fe53f6bfc3cfba00fa80fcea6998244c7eb2"
 
 [[package]]
@@ -3296,17 +3290,6 @@ name = "keccak"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "67c21572b4949434e4fc1e1978b99c5f77064153c59d998bf13ecd96fb5ecba7"
-
-[[package]]
-name = "keccak-hasher"
-version = "0.15.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "711adba9940a039f4374fc5724c0a5eaca84a2d558cce62256bfe26f0dbef05e"
-dependencies = [
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "hash256-std-hasher",
- "tiny-keccak",
-]
 
 [[package]]
 name = "kernel32-sys"
@@ -4230,7 +4213,7 @@ version = "0.27.0"
 source = "git+https://github.com/axia-tech/trie?branch=master#ee16fe53f6bfc3cfba00fa80fcea6998244c7eb2"
 dependencies = [
  "axia-util-mem 0.10.2 (git+https://github.com/axia-tech/axia-common)",
- "hash-db 0.15.2 (git+https://github.com/axia-tech/trie?branch=master)",
+ "hash-db",
  "hashbrown",
 ]
 
@@ -4549,7 +4532,7 @@ dependencies = [
  "derive_more",
  "fs_extra",
  "futures 0.3.19",
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hash-db",
  "hex",
  "kvdb",
  "kvdb-rocksdb",
@@ -7526,7 +7509,7 @@ dependencies = [
  "axia-scale-codec",
  "fnv",
  "futures 0.3.19",
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hash-db",
  "log 0.4.14",
  "parking_lot 0.11.2",
  "sc-executor",
@@ -7555,7 +7538,7 @@ version = "0.10.0-dev"
 dependencies = [
  "axia-db",
  "axia-scale-codec",
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hash-db",
  "kvdb",
  "kvdb-memorydb",
  "kvdb-rocksdb",
@@ -8017,7 +8000,7 @@ name = "sc-light"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hash-db",
  "parking_lot 0.11.2",
  "sc-client-api",
  "sc-executor",
@@ -8194,7 +8177,7 @@ dependencies = [
  "assert_matches",
  "axia-scale-codec",
  "futures 0.3.19",
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hash-db",
  "jsonrpc-core",
  "jsonrpc-pubsub",
  "lazy_static",
@@ -8289,7 +8272,7 @@ dependencies = [
  "exit-future",
  "futures 0.3.19",
  "futures-timer 3.0.2",
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hash-db",
  "jsonrpc-core",
  "jsonrpc-pubsub",
  "log 0.4.14",
@@ -8965,7 +8948,7 @@ name = "sp-api"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hash-db",
  "log 0.4.14",
  "sp-api-proc-macro",
  "sp-core",
@@ -9214,7 +9197,7 @@ dependencies = [
  "dyn-clonable",
  "ed25519-dalek",
  "futures 0.3.19",
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hash-db",
  "hash256-std-hasher",
  "hex",
  "hex-literal",
@@ -9314,7 +9297,7 @@ version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
  "futures 0.3.19",
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hash-db",
  "libsecp256k1 0.6.0",
  "log 0.4.14",
  "parking_lot 0.11.2",
@@ -9584,7 +9567,7 @@ name = "sp-state-machine"
 version = "0.10.0-dev"
 dependencies = [
  "axia-scale-codec",
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hash-db",
  "hex-literal",
  "log 0.4.14",
  "num-traits",
@@ -9700,7 +9683,7 @@ version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
  "criterion",
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hash-db",
  "hex-literal",
  "memory-db",
  "scale-info",
@@ -9709,7 +9692,6 @@ dependencies = [
  "sp-std",
  "trie-db",
  "trie-root",
- "trie-standardmap",
 ]
 
 [[package]]
@@ -10638,10 +10620,9 @@ checksum = "efd1f82c56340fdf16f2a953d7bda4f8fdffba13d93b00844c25572110b26079"
 [[package]]
 name = "trie-db"
 version = "0.22.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9eac131e334e81b6b3be07399482042838adcd7957aa0010231d0813e39e02fa"
+source = "git+https://github.com/axia-tech/trie?branch=master#ee16fe53f6bfc3cfba00fa80fcea6998244c7eb2"
 dependencies = [
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hash-db",
  "hashbrown",
  "log 0.4.14",
  "rustc-hex",
@@ -10651,20 +10632,9 @@ dependencies = [
 [[package]]
 name = "trie-root"
 version = "0.16.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "652931506d2c1244d7217a70b99f56718a7b4161b37f04e7cd868072a99f68cd"
+source = "git+https://github.com/axia-tech/trie?branch=master#ee16fe53f6bfc3cfba00fa80fcea6998244c7eb2"
 dependencies = [
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
-name = "trie-standardmap"
-version = "0.15.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c3161ba520ab28cd8e6b68e1126f1009f6e335339d1a73b978139011703264c8"
-dependencies = [
- "hash-db 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "keccak-hasher",
+ "hash-db",
 ]
 
 [[package]]

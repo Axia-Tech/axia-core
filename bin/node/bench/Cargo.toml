@@ -30,7 +30,7 @@ sc-basic-authorship = { version = "0.10.0-dev", path = "../../../client/basic-au
 sp-inherents = { version = "4.0.0-dev", path = "../../../primitives/inherents" }
 sp-timestamp = { version = "4.0.0-dev", default-features = false, path = "../../../primitives/timestamp" }
 sp-tracing = { version = "4.0.0-dev", path = "../../../primitives/tracing" }
-hash-db = "0.15.2"
+hash-db = { git = "https://github.com/axia-tech/trie", branch = "master", version = "0.15.2" }
 tempfile = "3.1.0"
 fs_extra = "1"
 hex = "0.4.0"

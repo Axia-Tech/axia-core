@@ -32,7 +32,7 @@ log = "0.4.11"
 futures-timer = "3.0.1"
 exit-future = "0.2.0"
 pin-project = "1.0.8"
-hash-db = "0.15.2"
+hash-db = { git = "https://github.com/axia-tech/trie", branch = "master", version = "0.15.2" }
 serde = "1.0.126"
 serde_json = "1.0.68"
 sc-keystore = { version = "4.0.0-dev", path = "../keystore" }

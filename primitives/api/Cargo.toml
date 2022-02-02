@@ -20,7 +20,7 @@ sp-std = { version = "4.0.0-dev", default-features = false, path = "../std" }
 sp-runtime = { version = "4.0.0-dev", default-features = false, path = "../runtime" }
 sp-version = { version = "4.0.0-dev", default-features = false, path = "../version" }
 sp-state-machine = { version = "0.10.0-dev", optional = true, path = "../state-machine" }
-hash-db = { version = "0.15.2", optional = true }
+hash-db = { git = "https://github.com/axia-tech/trie", branch = "master", version = "0.15.2", optional = true }
 thiserror = { version = "1.0.21", optional = true }
 
 log = { version = "0.4.14", default-features = false }

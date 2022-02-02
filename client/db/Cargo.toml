@@ -19,7 +19,7 @@ kvdb = { git = "https://github.com/axia-tech/axia-common", branch = "master", ve
 kvdb-rocksdb = { git = "https://github.com/axia-tech/axia-common", branch = "master", version = "0.14.0", optional = true }
 kvdb-memorydb = { git = "https://github.com/axia-tech/axia-common", branch = "master", version = "0.10.0" }
 linked-hash-map = "0.5.4"
-hash-db = "0.15.2"
+hash-db = { git = "https://github.com/axia-tech/trie", branch = "master", version = "0.15.2" }
 codec = { git = "https://github.com/axia-tech/axia-scale-codec", package = "axia-scale-codec", branch = "v2.3.1", features = [
     "derive",
 ] }
