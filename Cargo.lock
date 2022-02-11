@@ -1972,20 +1972,6 @@ dependencies = [
 
 [[package]]
 name = "finality-grandpa"
-version = "0.14.1"
-source = "git+https://github.com/axia-tech/finality-grandpa?branch=v0.14.1#2ba21292c759153947e534c56b808961d0e1eef3"
-dependencies = [
- "axia-scale-codec",
- "either",
- "futures 0.3.19",
- "futures-timer 3.0.2",
- "log 0.4.14",
- "num-traits",
- "parking_lot 0.11.2",
-]
-
-[[package]]
-name = "finality-grandpa"
 version = "0.14.4"
 source = "git+https://github.com/axia-tech/finality-grandpa?branch=v0.14.4#595370dd032b0050d231a23ad9fab90ab7db36fa"
 dependencies = [
@@ -5615,7 +5601,7 @@ name = "pallet-grandpa"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
- "finality-grandpa 0.14.1",
+ "finality-grandpa",
  "frame-benchmarking",
  "frame-election-provider-support",
  "frame-support",
@@ -7909,7 +7895,7 @@ dependencies = [
  "axia-scale-codec",
  "derive_more",
  "dyn-clone",
- "finality-grandpa 0.14.4",
+ "finality-grandpa",
  "fork-tree",
  "futures 0.3.19",
  "futures-timer 3.0.2",
@@ -7943,7 +7929,7 @@ version = "0.10.0-dev"
 dependencies = [
  "axia-scale-codec",
  "derive_more",
- "finality-grandpa 0.14.4",
+ "finality-grandpa",
  "futures 0.3.19",
  "jsonrpc-core",
  "jsonrpc-core-client",
@@ -9265,7 +9251,7 @@ name = "sp-finality-grandpa"
 version = "4.0.0-dev"
 dependencies = [
  "axia-scale-codec",
- "finality-grandpa 0.14.1",
+ "finality-grandpa",
  "log 0.4.14",
  "scale-info",
  "serde",

@@ -32,7 +32,7 @@ log = { version = "0.4.14", default-features = false }
 
 [dev-dependencies]
 frame-benchmarking = { version = "4.0.0-dev", path = "../benchmarking" }
-grandpa = { git = "https://github.com/axia-tech/finality-grandpa", package = "finality-grandpa", branch = "v0.14.1", features = ["derive-codec"] }
+grandpa = { git = "https://github.com/axia-tech/finality-grandpa", package = "finality-grandpa", branch = "v0.14.4", features = ["derive-codec"] }
 sp-keyring = { version = "4.0.0-dev", path = "../../primitives/keyring" }
 pallet-balances = { version = "4.0.0-dev", path = "../balances" }
 pallet-offences = { version = "4.0.0-dev", path = "../offences" }
