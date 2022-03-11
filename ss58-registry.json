@@ -562,7 +562,7 @@
 		{
 			"prefix": 101,
 			"network": "origintrail-allychain",
-			"displayName": "OriginTrail Parachain",
+			"displayName": "OriginTrail Allychain",
 			"symbols": ["TRAC"],
 			"decimals": [18],
 			"standardAccount": "secp256k1",
